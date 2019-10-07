@@ -1,0 +1,26 @@
+syntax = "proto3";
+package grpctest;
+
+// The greeting service definition.
+service GrpcTest {
+    rpc GetQuotient (DivisionPair) returns (DivisionResult) {}
+    rpc GetRemainder (DivisionPair) returns (DivisionResult) {}
+    // rpc StreamLambs (StreamLambsRequest) returns (stream LambsMessage) {}
+}
+
+message DivisionPair {
+  int32 dividend = 1;
+  int32 divisor = 2;
+}
+
+message DivisionResult {
+  int32 value = 1;
+}
+
+// message StreamLambsRequest {
+//   int32 quantity = 1;
+// }
+
+// message LambsMessage {
+//   string content = 1;
+// }
